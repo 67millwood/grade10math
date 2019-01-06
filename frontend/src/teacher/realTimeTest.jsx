@@ -4,6 +4,7 @@ import ActionCable from 'actioncable';
 import StudentsOnlineList from './studentsOnlineList';
 import StudentStatsTable from './studentStatsTable';
 import TestTimer from './testTimer';
+import { CSSTransitionGroup } from 'react-transition-group'
 
 
 class RealTimeTest extends Component {
@@ -157,7 +158,11 @@ class RealTimeTest extends Component {
         <div>
           <h1> Please write {this.props.roomID} on the board! </h1>
           <h3> Online Students </h3>
+
+
           <StudentsOnlineList students={this.state.students} />
+
+
           <button onClick={this.startTest}> Start Test </button>
         </div>
       )

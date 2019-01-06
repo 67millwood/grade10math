@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group'
 
 class StudentsOnlineList extends Component {
 
@@ -13,7 +14,12 @@ class StudentsOnlineList extends Component {
     } else {
       return (
         <ul class="list-group">
+        <CSSTransitionGroup
+          transitionName="example"
+          transitionEnterTimeout={1000}
+          >
           {studentsOnline}
+          </CSSTransitionGroup>
         </ul>
       )
     };
