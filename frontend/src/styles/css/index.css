@@ -69,3 +69,17 @@ code {
   opacity: 0.01;
   transition: opacity 1000ms ease-in;
 }
+
+/* for questions */
+.question {
+      position:  relative;
+      border:        5px solid #ccc;
+      background-color: blanchedAlmond;
+      border-radius: 10px;
+      padding:       15px;
+      padding-bottom: 50px;
+      margin-top:    20px;
+}
+
+
+

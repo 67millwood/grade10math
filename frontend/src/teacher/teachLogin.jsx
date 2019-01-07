@@ -100,7 +100,7 @@ class TeacherLogin extends React.Component {
         <h4>Please enter test duration in minutes </h4>
         <input type="number" onChange={this.handleTimeChange}/>
         <br/>
-        <button onClick={this.handleSubmitTest}> Create Test </button>
+        <button class="btn btn-info" onClick={this.handleSubmitTest}> Create Test </button>
         </div>
       )
     } else if (this.state.isReady) {

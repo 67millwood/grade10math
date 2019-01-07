@@ -122,7 +122,7 @@ class RealTimeTest extends Component {
     if (this.state.testEnd) {
       return (
         <div>
-          <p class="h2 bg-secondary text-white"> Real Time Results... </p>
+          <h2>Final Student Results: <span class="badge badge-secondary">{this.props.roomID}</span></h2>
           <TestTimer
             testTime={this.props.testTime}
             pauseTest={this.pauseTest}
@@ -140,7 +140,7 @@ class RealTimeTest extends Component {
     } else if (this.state.testStart) {
       return (
         <div>
-          <p class="h2 bg-secondary text-white"> Real Time Results... </p>
+          <h2>Real Time Student Results: <span class="badge badge-secondary">{this.props.roomID}</span></h2>
           <TestTimer
             testTime={this.props.testTime}
             pauseTest={this.pauseTest}
@@ -161,9 +161,10 @@ class RealTimeTest extends Component {
 
 
           <StudentsOnlineList students={this.state.students} />
+          <br></br>
 
 
-          <button onClick={this.startTest}> Start Test </button>
+          <button class="btn btn-primary" onClick={this.startTest}> Start Test </button>
         </div>
       )
     }

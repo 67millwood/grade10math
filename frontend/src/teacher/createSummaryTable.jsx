@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CreateScoreRow from './createScoreRow'
+import { CSSTransitionGroup } from 'react-transition-group'
+
 
 class CreateSummaryTable extends Component {
 
@@ -142,7 +144,9 @@ class CreateSummaryTable extends Component {
                   totalAnswersByCategoryLevel={this.totalAnswersByCategoryLevel}
                 />
               ))}
+
               <td>{this.totalCorrectAnswersByLevel(level)} / {this.totalAnswersByLevel(level)}</td>
+
             </tr>
           ))}
         </React.Fragment>
@@ -160,7 +164,14 @@ class CreateSummaryTable extends Component {
               totalAnswersByCategory={this.totalAnswersByCategory}
             />
           ))}
-          <td>{this.totalCorrectAnswers()} / {this.totalAnswers()}</td>
+          <td>
+              <CSSTransitionGroup
+                      transitionName="example"
+                      transitionEnterTimeout={1000}
+                      >
+                      {this.totalCorrectAnswers()} / {this.totalAnswers()}
+                      </CSSTransitionGroup>
+          </td>
         </tr>
       )
     }

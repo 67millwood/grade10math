@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
+
 
 // Creates each row that contains individual scores
 class CreateScoreRow extends Component {
@@ -18,11 +20,17 @@ class CreateScoreRow extends Component {
       )
     } else if (level || level === 0 ) {
       return (
-        <td>{this.props.numberCorrectByLevel(student[category][level])} / {student[category][level].length}</td>
+        <td>
+
+          {this.props.numberCorrectByLevel(student[category][level])} / {student[category][level].length}
+
+          </td>
       )
     } else {
       return (
-        <td>{this.props.numberCorrect(student[category])} / {this.props.numberOfQuestionsAnswered(student[category])}</td>
+        <td>
+
+          {this.props.numberCorrect(student[category])} / {this.props.numberOfQuestionsAnswered(student[category])}</td>
       )
     }
   }

@@ -202,6 +202,7 @@ class QuestionHandler extends Component {
       return (
         <div>
          <img src={logo} className="App-logo" alt="logo" />
+         <br></br>
          <input type='button' value='Get Question' onClick={this.getFirstQuestion}>
          </input>
          <h2> {this.state.selected_answer} </h2>
@@ -209,10 +210,10 @@ class QuestionHandler extends Component {
       )
     } else {
       return (
-        <div>
+        <div class="form-check">
           <h1> {this.state.qtext} </h1>
           <br/> <br/>
-          <form>
+          <form className="question">
             <label>
               <input type='radio' value={this.state.a1}
                 checked={this.state.selected_answer === this.state.a1}
@@ -242,7 +243,7 @@ class QuestionHandler extends Component {
             </label>
             <p/>
           </form>
-          <button onClick={this.submitQuestion}> SUBMIT! </button>
+          <button class="btn btn-info" onClick={this.submitQuestion}> Submit </button>
           <div>
             <h3> {this.state.message} </h3>
           </div>

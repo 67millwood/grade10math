@@ -62,9 +62,9 @@ class TestTimer extends Component {
 
   timerButton = () => {
     if (this.state.pause) {
-      return ( <button onClick={this.continue}> Continue Test </button> )
+      return ( <button class="btn btn-primary" onClick={this.continue}> Continue Test </button> )
     } else {
-      return ( <button onClick={this.pause}> Pause Test </button> )
+      return ( <button class="btn btn-primary" onClick={this.pause}> Pause Test </button> )
     }
   }
 
@@ -85,7 +85,7 @@ class TestTimer extends Component {
     if (this.props.testEnd && this.state.timeSent) {
       return (
         <div>
-          Time taken {this.props.totalTestTime} min
+          Time of test: {this.props.totalTestTime} min
         </div>
       )
     } else if (this.state.testTime >= 0 && this.state.seconds < 10 && !this.state.negative) {

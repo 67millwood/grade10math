@@ -3,6 +3,7 @@ import StudentMessageButtons from './studentMessageButtons';
 import CreateScoreTable from './createScoreTable';
 import CreateSummaryTable from './createSummaryTable';
 
+
 class StudentStatsTable extends Component {
   constructor(props) {
     super(props)
@@ -69,7 +70,9 @@ class StudentStatsTable extends Component {
             showLevels={this.showTestScores}
             hideLevels={this.hideTestScores}
           />
+
           {scoreTable}
+
         </table>
       )
     } else {
