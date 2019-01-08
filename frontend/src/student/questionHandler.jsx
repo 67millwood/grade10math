@@ -4,6 +4,8 @@ import logo from '../images/logo.svg';
 import ActionCable from 'actioncable';
 import corgi from '../images/corgiFinisher.jpg'
 import standby from '../images/standby.jpeg'
+import { CSSTransitionGroup } from 'react-transition-group'
+
 
 // Main component for students
 // Handles websocket and question logic
@@ -216,6 +218,7 @@ class QuestionHandler extends Component {
   CreateAnswerButtons = (props) => {
     const answerNum = [ 'a1', 'a2', 'a3', 'a4' ]
     return (
+
       <form className="question">
         {answerNum.map((answer) => {
           return(
@@ -231,6 +234,7 @@ class QuestionHandler extends Component {
           )
         })}
       </form>
+
     )
   }
 
@@ -264,7 +268,13 @@ class QuestionHandler extends Component {
           <h3> {this.state.qtext} </h3>
 
           {this.state.questionAlertMessage}
+          <CSSTransitionGroup
+          transitionName="example"
+          transitionAppear={true}
+          transitionAppearTimeout={1000}
+          >
           <this.CreateAnswerButtons />
+          </CSSTransitionGroup>
           <button class="btn btn-info" style={styleObject} onClick={this.submitQuestion}> Submit </button>
           <div>
             <h3> {this.state.message} </h3>
